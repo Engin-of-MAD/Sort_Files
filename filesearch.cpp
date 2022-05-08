@@ -38,6 +38,8 @@ QString FileSearch::getExtd()
 
 
 
+
+
 void FileSearch::setExtd(QString extd)
 {
     this->extdF = extd;
@@ -51,7 +53,27 @@ QStringList FileSearch::getInPathList()
 
 QStringList FileSearch::getOutPathList()
 {
+    return this->outPathList;
+}
 
+QStringList FileSearch::getExtdList()
+{
+    return this->extdList;
+}
+
+QStringList FileSearch::getLabelList()
+{
+    return this->labelList;
+}
+
+QString FileSearch::getLabel()
+{
+    return this->label;
+}
+
+void FileSearch::setLabel(QString label)
+{
+    this->label = label;
 }
 
 void FileSearch::setInPath(QString path)
@@ -136,11 +158,40 @@ QString FileSearch::inptExtd()
     return extd;
 }
 
-/*QString FileSearch::inputLabel(Item *item)
+void FileSearch::setData(Item *item, Item* subItem)
 {
-    return item->getItemName();
+    QStringList::const_iterator it;
+    QStringList::const_iterator it1;
+    QStringList::const_iterator it2;
+    QStringList::const_iterator it3;
+
+    for (it = inPathList.constBegin(); it != inPathList.constEnd(); it++){
+        subItem->setInPath(*it);
+        item->addItem(subItem);
+    }
 }
-*/
+
+QString FileSearch::inptLabel()
+{
+    QTextStream cout(stdout);
+    QTextStream cin(stdin);
+
+    QString label;
+    QString tmp_label;
+    QString msg = "Имя сортировки";
+    cout << msg << Qt::endl;
+    cin >> tmp_label;
+
+    if (tmp_label == "q" || tmp_label == "Q") {
+        rim();
+        return tmp_label;
+    }
+
+    label = tmp_label;
+    setLabel(label);
+    return label;
+}
+
 
 
 void FileSearch::rim()
@@ -148,22 +199,30 @@ void FileSearch::rim()
     emit returnInMenu();
 }
 
+void FileSearch::saveI()
+{
+
+}
+
 
 void FileSearch::moveFiles()
 {
     QTextStream cout(stdout);
+
     myDirI.setPath(getInPath());
     fileList = myDirI.entryInfoList(extdList, QDir::Files);
     myDirO.setPath(getOutPath());
+
     for (QFileInfo file : fileList) {
-        QString tmp_inPath = myDirI.absolutePath() + myDirI.separator() + file.fileName();
-        cout << tmp_inPath << Qt::endl;
-        QString tmp_outPath = myDirO.absolutePath() + myDirO.separator() + file.fileName();
-        myFile.setFileName(tmp_inPath);
-        if(myFile.rename(tmp_inPath, tmp_outPath)){
-            cout << "Succsses\n";
-        }
-        else cout << "Fail\n";
+            QString tmp_inPath = myDirI.absolutePath() + myDirI.separator() + file.fileName();
+            cout << tmp_inPath << Qt::endl;
+            QString tmp_outPath = myDirO.absolutePath() + myDirO.separator() + file.fileName();
+            myFile.setFileName(tmp_inPath);
+
+                if(myFile.rename(tmp_inPath, tmp_outPath)){
+                    cout << "Succsses\n";
+                }
+                else cout << "Fail\n";
     }
 
 }
@@ -199,16 +258,8 @@ void FileSearch::inputC()
            rim();
            break;
        }
-
-
-
-
-
-
     }
 
 }
-
-
 
 

@@ -10,6 +10,31 @@ QString Item::getItemName() {
     return nameItem;
 }
 
+void Item::showData()
+{
+    throw std::exception();
+}
+
+void Item::setInPath()
+{
+    throw std::exception();
+}
+
+void Item::setOutPath()
+{
+    throw std::exception();
+}
+
+void Item::setExtd()
+{
+    throw std::exception();
+}
+
+void Item::setLabel()
+{
+    throw std::exception();
+}
+
 void Item::selectAction()
 {
     emit selectedItem();
@@ -102,11 +127,19 @@ void ItemList::removeItem(Item* subItem){
     throw std::exception();
 }
 
-void ItemSettings::saveData(FileSearch *file)
+void ItemSettings::initData(FileSearch *file)
 {
-        QSettings settings(NORG, NAPP);
-        settings.setValue("P_Sort/inPathList", file->getInPath());
-        settings.setValue("P_Sort/outPathList", file->getOutPath());
-        settings.setValue("P_Sort/extdList", file->getExtd());
-        settings.setValue("P_Sort/labelList", "");
+     this->Label = file->getLabel();
+     this->InPath = file->getInPath();
+     this->OutPath = file->getOutPath();
+     this->Extd = file->getExtd();
+}
+
+void ItemSettings::showData()
+{
+    QTextStream cout(stdout);
+    cout << Label << Qt::endl;
+    cout << InPath << Qt::endl;
+    cout << OutPath << Qt::endl;
+    cout << Extd << Qt::endl;
 }

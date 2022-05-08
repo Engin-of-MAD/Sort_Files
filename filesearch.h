@@ -9,7 +9,8 @@
 #include <QStringList>
 #include <QTextStream>
 #include <QSettings>
-//#include "menu.h"
+#include "menu.h"
+
 
 #define NAPP "QSort"
 #define NORG "IDNK"
@@ -42,10 +43,12 @@ private:
     QStringList inPathList;
     QStringList outPathList;
 
+    QString label;
     QString outPath;
     QString extdF;
     QString inPath;
 
+    void setLabel(QString label);
     void setInPath(QString path);
     void setOutPath(QString path);
     void setExtd(QString extd);
@@ -55,23 +58,27 @@ public:
     QStringList getInPathList();
     QStringList getOutPathList();
     QStringList getExtdList();
+    QStringList getLabelList();
 
+    QString getLabel();
     QString getOutPath();
     QString getInPath();
     QString getExtd();
 
+    QString inptLabel();
     QString inptInPath();
     QString inptOutPath();
     QString inptExtd();
-   // QString inputLabel(Item *item);
-    //void saveData(FileSearch* file);
+
+    void setData(Item* item, Item* subitem);
+
     void rim();
 
 public slots:
+   void saveI();
    void moveFiles();
    void inputC();
 signals:
-   void Save();
    void returnInMenu();
 };
 

@@ -24,7 +24,7 @@ int main()
 
     menu->addItem(start);
     menu->addItem(p_sort);
-    menu-> addItem(setup);
+    menu->addItem(setup);
     menu->addItem(exit);
 
     //creating elements for submenu p_sort
@@ -40,6 +40,8 @@ int main()
     p_sort->addItem(addMP);
     p_sort->addItem(saveP);
     p_sort->addItem(returnToMainMenu);
+
+    if(){}
 
     //creating elements for submenu setup
 
@@ -64,7 +66,7 @@ int main()
     QObject::connect(saveP, &Item::selectedItem, &file, &FileSearch::inputC);
     QObject::connect(returnToMainMenu, &Item::selectedItem, menu, &Item::nextMenu);
     QObject::connect(&file, &FileSearch::returnInMenu, p_sort, &Item::nextMenu);
-
+    //QObject::connect(addMP, &Item::selectedItem, &file,);
 
 
     menu->display();

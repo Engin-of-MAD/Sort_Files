@@ -70,15 +70,15 @@ public:
     QString inptOutPath();
     QString inptExtd();
 
-    void setData(Item* item, Item* subitem);
 
     void rim();
-
+    void addlI();
 public slots:
    void saveI();
    void moveFiles();
    void inputC();
 signals:
+   void addlabelItem();
    void returnInMenu();
 };
 

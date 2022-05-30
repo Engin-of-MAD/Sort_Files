@@ -21,7 +21,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     filesearch.h \
-    itemsettings.h \
     logger.h \
     menu.h
     menu.h

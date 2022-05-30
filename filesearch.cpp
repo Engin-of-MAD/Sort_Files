@@ -158,7 +158,7 @@ QString FileSearch::inptExtd()
     return extd;
 }
 
-void FileSearch::setData(Item *item, Item* subItem)
+/*void FileSearch::setData(Item *item, Item* subItem)
 {
     QStringList::const_iterator it;
     QStringList::const_iterator it1;
@@ -170,7 +170,7 @@ void FileSearch::setData(Item *item, Item* subItem)
         item->addItem(subItem);
     }
 }
-
+*/
 QString FileSearch::inptLabel()
 {
     QTextStream cout(stdout);
@@ -199,10 +199,17 @@ void FileSearch::rim()
     emit returnInMenu();
 }
 
+void FileSearch::addlI()
+{
+    emit addlabelItem();
+}
+
 void FileSearch::saveI()
 {
 
 }
+
+
 
 
 void FileSearch::moveFiles()
@@ -231,34 +238,11 @@ void FileSearch::moveFiles()
 
 void FileSearch::inputC()
 {
-    QTextStream cout(stdout);
-
-    QString extd;
-    QString inPath;
-    QString outPath;
-    while (true) {
-
-        inPath = inptInPath();
-
-       if (inPath == "q" || inPath == "Q"){
-            rim();
-            break;
-        }
-
-       outPath = inptOutPath();
-
-       if (outPath == "q" || outPath == "Q"){
-           rim();
-           break;
-        }
-
-       extd = inptExtd();
-
-       if (extd == "q" || extd == "Q"){
-           rim();
-           break;
-       }
-    }
+   //Item* p_item;
+   inptInPath();
+   inptOutPath();
+   inptExtd();
+   rim();
 
 }
 

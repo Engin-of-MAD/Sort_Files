@@ -7,7 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <QSettings>
-#include "filesearch.h"
+//#include "filesearch.h"
 using namespace std;
 
 class Item : public QObject
@@ -28,11 +28,6 @@ public:
     Item(){}
     QString getItemName();
 
-    virtual void showData();
-    virtual void setInPath(QString path);
-    virtual void setOutPath(QString path);
-    virtual void setExtd(QString extd);
-    virtual void setLabel(QString label);
 
     virtual void addItem(Item* subItem) = 0;
     virtual void removeItem(Item* subItem) = 0;

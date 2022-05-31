@@ -82,6 +82,27 @@ public slots:
 
 };
 
+class P_Item : public Item{
+private:
+    QString Label;
+    QString InPath;
+    QString OutPath;
+    QString Filter;
+public:
+    P_Item(QString label, QString inPath, QString outPath, QString filter){
+        this->Label = label;
+        this->InPath = inPath;
+        this->Filter = filter;
+        this->OutPath = outPath;
+    }
+    void selectItem() override;
+    void display() override;
+    void removeItem(Item* subItem) override;
+    void addItem(Item* subItem) override;
+    void nextMenu() override;
+
+};
+
 
 
 #endif

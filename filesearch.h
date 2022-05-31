@@ -70,6 +70,7 @@ public:
     QString inptOutPath();
     QString inptExtd();
 
+    Item* addItem();
 
     void rim();
     void addlI();

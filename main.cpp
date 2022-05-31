@@ -41,7 +41,7 @@ int main()
     p_sort->addItem(saveP);
     p_sort->addItem(returnToMainMenu);
 
-    if(){}
+    //if(){}
 
     //creating elements for submenu setup
 

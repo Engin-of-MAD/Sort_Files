@@ -158,19 +158,13 @@ QString FileSearch::inptExtd()
     return extd;
 }
 
-/*void FileSearch::setData(Item *item, Item* subItem)
+Item *FileSearch::addItem()
 {
-    QStringList::const_iterator it;
-    QStringList::const_iterator it1;
-    QStringList::const_iterator it2;
-    QStringList::const_iterator it3;
-
-    for (it = inPathList.constBegin(); it != inPathList.constEnd(); it++){
-        subItem->setInPath(*it);
-        item->addItem(subItem);
-    }
+    Item* p_item = new P_Item(getLabel(), getInPath(), getOutPath(), getExtd());
+    return p_item;
 }
-*/
+
+
 QString FileSearch::inptLabel()
 {
     QTextStream cout(stdout);

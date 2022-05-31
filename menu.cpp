@@ -102,3 +102,28 @@ void ItemList::removeItem(Item* subItem){
     throw std::exception();
 }
 
+
+void P_Item::selectItem()
+{
+    throw std::exception();
+}
+
+void P_Item::display()
+{
+    throw std::exception();
+}
+
+void P_Item::removeItem(Item *subItem)
+{
+    throw std::exception();
+}
+
+void P_Item::addItem(Item *subItem)
+{
+    throw std::exception();
+}
+
+void P_Item::nextMenu()
+{
+    throw std::exception();
+}

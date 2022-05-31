@@ -66,7 +66,7 @@ int main()
     QObject::connect(saveP, &Item::selectedItem, &file, &FileSearch::inputC);
     QObject::connect(returnToMainMenu, &Item::selectedItem, menu, &Item::nextMenu);
     QObject::connect(&file, &FileSearch::returnInMenu, p_sort, &Item::nextMenu);
-    //QObject::connect(addMP, &Item::selectedItem, &file,);
+
 
 
     menu->display();

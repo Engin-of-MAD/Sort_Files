@@ -232,12 +232,11 @@ void FileSearch::moveFiles()
 
 void FileSearch::inputC()
 {
-   //Item* p_item;
+   inptLabel();
    inptInPath();
    inptOutPath();
    inptExtd();
    rim();
-
 }
 
 

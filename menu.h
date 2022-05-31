@@ -14,12 +14,9 @@ class Item : public QObject
 {
     Q_OBJECT
 protected:
-    QSettings settings;
 
-    QString InPath;
-    QString OutPath;
-    QString Extd;
-    QString Label;
+
+
     QString nameItem;
     QString nameOwner;
 public:
@@ -84,13 +81,13 @@ public slots:
 
 class P_Item : public Item{
 private:
-    QString Label;
+
     QString InPath;
     QString OutPath;
     QString Filter;
 public:
     P_Item(QString label, QString inPath, QString outPath, QString filter){
-        this->Label = label;
+        this->nameItem = label;
         this->InPath = inPath;
         this->Filter = filter;
         this->OutPath = outPath;

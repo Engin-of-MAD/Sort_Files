@@ -28,7 +28,6 @@ void ClickableItem::selectItem()
 }
 
 void ClickableItem::display() {
-    QTextStream in(stdin);
     QTextStream out(stdout);
     out << nameItem << "\n";
 }
@@ -110,7 +109,8 @@ void P_Item::selectItem()
 
 void P_Item::display()
 {
-    throw std::exception();
+    QTextStream out(stdout);
+    out << nameItem << "\n";
 }
 
 void P_Item::removeItem(Item *subItem)

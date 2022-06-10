@@ -1,14 +1,12 @@
 #pragma once
 #ifndef MENU_H
 #define MENU_H
+
+#include "filesearch.h"
 #include <QObject>
 #include <QString>
-#include <QTextStream>
-#include <iostream>
 #include <vector>
-#include <QSettings>
-//#include "filesearch.h"
-using namespace std;
+
 
 class Item : public QObject
 {
@@ -62,7 +60,7 @@ class ItemList : public Item {
 protected:
     int check(int chs);
     int corr_inpt(int num);
-    vector<Item*> myItems;
+    std::vector<Item*> myItems;
 public:
 
     ItemList(QString name) : Item(name) {}

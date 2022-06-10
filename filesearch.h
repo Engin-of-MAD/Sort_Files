@@ -1,20 +1,20 @@
 #ifndef FILESEARCH_H
 #define FILESEARCH_H
-
-#include <iostream>
+#include "menu.h"
 #include <QObject>
 #include <QDir>
 #include <QFile>
 #include <QString>
 #include <QStringList>
-#include <QTextStream>
-#include <QSettings>
-#include "menu.h"
+
+
+
 
 
 #define NAPP "QSort"
 #define NORG "IDNK"
-using namespace std;
+
+class Item;
 class Plug: public QObject{
     Q_OBJECT
 private:
@@ -70,7 +70,7 @@ public:
     QString inptOutPath();
     QString inptExtd();
 
-    Item* addItem();
+    Item *addItem();
 
     void rim();
     void addlI();

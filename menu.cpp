@@ -111,6 +111,9 @@ void P_Item::display()
 {
     QTextStream out(stdout);
     out << nameItem << "\n";
+    out << InPath   << "\n";
+    out << OutPath  << "\n";
+    out << Filter   << "\n";
 }
 
 void P_Item::removeItem(Item *subItem)

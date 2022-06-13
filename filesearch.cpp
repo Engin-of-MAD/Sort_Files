@@ -158,11 +158,20 @@ QString FileSearch::inptExtd()
     return extd;
 }
 
-Item *FileSearch::addItem()
+void FileSearch::cr_pItem()
 {
-    Item* p_item = new P_Item(getLabel(), getInPath(), getOutPath(), getExtd());
-    return p_item;
+    Item *p_item = new P_Item(getLabel(), getInPath(), getOutPath(), getExtd());
+    this->cr_item = p_item;
+
 }
+
+void FileSearch::setItem(Item *trg_item)
+{
+    this->trg_item = trg_item;
+}
+
+
+
 
 
 QString FileSearch::inptLabel()
@@ -193,9 +202,9 @@ void FileSearch::rim()
     emit returnInMenu();
 }
 
-void FileSearch::addlI()
+void FileSearch::add_pr()
 {
-    emit addlabelItem();
+    emit addIPr();
 }
 
 void FileSearch::saveI()
@@ -237,6 +246,17 @@ void FileSearch::inputC()
    inptOutPath();
    inptExtd();
    rim();
+   add_pr();
+}
+
+void FileSearch::addPr()
+{
+    QTextStream out(stdout);
+
+    trg_item->addItem(cr_item);
+
+    out << "Work\n";
+
 }
 
 

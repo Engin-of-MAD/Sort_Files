@@ -11,8 +11,8 @@
 
 
 
-#define NAPP "QSort"
-#define NORG "IDNK"
+//#define NAPP "QSort"
+//#define NORG "IDNK"
 
 class Item;
 class Plug: public QObject{
@@ -48,11 +48,13 @@ private:
     QString extdF;
     QString inPath;
 
+    Item* trg_item;
+    Item* cr_item;
+
     void setLabel(QString label);
     void setInPath(QString path);
     void setOutPath(QString path);
     void setExtd(QString extd);
-
 
 public:
     QStringList getInPathList();
@@ -64,22 +66,30 @@ public:
     QString getOutPath();
     QString getInPath();
     QString getExtd();
-
+    //Название параметра
     QString inptLabel();
+    //Откуда переместить
     QString inptInPath();
+    //Куда переместить
     QString inptOutPath();
+    //Расширение объекта
     QString inptExtd();
-
-    Item *addItem();
+    //Создать Item с необходимыми параметрами
+    void cr_pItem();
+    //куда встаить Item с параметрами
+    void setItem(Item* trg_item);
 
     void rim();
-    void addlI();
+    void add_pr();
 public slots:
    void saveI();
    void moveFiles();
+   //Ввод с консоли
    void inputC();
+   //Добавить Item с параметрами в список
+   void addPr();
 signals:
-   void addlabelItem();
+   void addIPr();
    void returnInMenu();
 };
 

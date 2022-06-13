@@ -65,7 +65,6 @@ public:
 
     ItemList(QString name) : Item(name) {}
     ItemList();
-
     void setItemName();
     void addItem(Item* subItem) override;
     void selectItem() override;
@@ -89,6 +88,7 @@ public:
         this->InPath = inPath;
         this->Filter = filter;
         this->OutPath = outPath;
+
     }
     void selectItem() override;
     void display() override;
